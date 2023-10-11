@@ -1,0 +1,4 @@
+#lang racket
+(define (power base pow)
+(define (fast-power base pow)
+  

@@ -1,0 +1,22 @@
+#lang racket
+(define (prefix? P L)
+  ; Returns #t if the list P is identical to the initial chars of L
+  ; Else returns #f
+  ; Input: tr, trevor
+  ; Output: #t
+  ; Side effects: None.
+  (cond[(empty? P) #t]
+       [(equal? (first P) (first L))
+        (prefix? (rest P) (rest L))]
+       [else #f]))
+(define (sublist? S L)
+  ; Returns #t if the list S is found anywhere within the list L
+  ; Input: rev, trevor
+  ; Output: #t
+  ; Side Effects: None.
+  (cond[(empty? S) #t]
+       [(equal? (prefix? S L) (#t)) #t]
+       [(sublist? S (rest L))]
+       [else #f]))
+        
+  
